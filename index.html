@@ -4,120 +4,177 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
     <title>HTML Only Page</title>
   </head>
   <body>
-    <nav>
-      <img src="imgs/xps.jfif" alt="a photo" />
-      <h2>an Image</h2>
-      <h3>sub-title</h3>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, porro.
-      </p>
+    <nav class="header">
+      <div class="logo"><span>My</span>Portfolio</div>
+      <div class="links">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#aboutUs">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contactUs">Contact Us</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <header>
-      <ul>
-        <li><a href="#">home</a></li>
-        <li><a href="#">pages</a></li>
-        <li><a href="#">gallery</a></li>
-        <li><a href="#">about</a></li>
-        <li><a href="#">contact</a></li>
-      </ul>
-    </header>
-
     <main>
-      <article id="article1">
-        <h2>Useless Tech You Should Never Buy</h2>
-        <h3>not every peice of tech deserves buying</h3>
-        <p>
-            The "audiophile SSD" actually upset me. 
-            I spent some time browsing the forums where it was talked about and
-            they were all basically drinking some intense koolaid, calling out websites
-            making fun of or otherwise pointing out the absurdity of the claims
-            as stupid or otherwise uninformed garbage. I feel bad for them.
-            I actually genuinely feel bad for them. There were people in 
-            there comparing the different kinds of m.2 storage for their audio 
-            quality, and pointed out that intel optane was the best in his 
-            experience for crystal clear sound. The thought that the storage
-            medium of the ones and zeros used to digitally represent your
-            music somehow modified the sound signature and that it was physically 
-            perceptible by your ears is the most ridiculous, batshit insane claim 
-            you could ever hope to make. That's like tiers above
-            reptile men ruling over the lower classes in the believability spectrum.
-        </p>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/wFQ3wyqITP8"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          ></iframe>
+      <!-- ------------------- home section ------------------- -->
+      <section class="home">
+        <article class="intro">
+          <p class="who">Who I am</p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio libero,
+          accusamus placeat voluptatibus ipsam voluptatum officiis a illum
+          doloribus laborum veniam hic cumque sit, provident quod odit ipsa nisi
+          veritatis, cum deserunt excepturi voluptates labore sapiente autem!
+          Fuga, possimus similique. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Dolores quae, perferendis maxime inventore
+          reprehenderit, nobis beatae minima aut provident commodi, praesentium
+          distinctio accusantium! Quos velit aperiam, nihil delectus possimus a?
+          Obcaecati sed nesciunt autem pariatur exercitationem quis, magnam sit
+          corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Minima facere nam neque at, temporibus exercitationem sapiente, nulla
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+          debitis quidem qui assumenda optio dolorem aspernatur modi
         </article>
-        
-        <section>
-            
-            <h2>GPS location page</h2>
-            <h3>google maps pages and locations could be embeded using iframe tag</h3>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d969.5622009651863!2d44.007760891521364!3d13.581605428961886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x161c6ed9a97785a5%3A0xa5d0f55371ac21ef!2sClub%20Taiz%20tourism!5e0!3m2!1sen!2s!4v1641730824403!5m2!1sen!2s" width="600" height="450"
-             style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-
-
-             <div>
-                 <img src="imgs/xps1.jfif" alt="">
-                 <img src="imgs/xps2.jfif" alt="">
-                 <img src="imgs/xps3.jfif" alt="">
-                 <img src="imgs/xps4.jfif" alt="">
-                 <img src="imgs/xps5.jfif" alt="">
-             </div>
+        <div class="me">
+          <img src="imgs/hamad.jpg" alt="hamad" />
+        </div>
       </section>
 
-      <article id="article2">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
-          ipsa culpa suscipit cum perspiciatis porro temporibus asperiores
-          voluptatem quam expedita!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-          consectetur, velit ex voluptate incidunt officia.
-        </p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat at
-          voluptates ea, vitae molestiae tempora velit esse placeat sint autem
-          culpa dignissimos id quo deserunt facilis impedit suscipit voluptate
-          incidunt.
-        </p>
+      <!-- ------------------- about us section ------------------- -->
+      <section class="about-us">
+        <div class="skills">
+          <h2 class="main-title">Skills</h2>
+          <ul>
+            <li>Mobile Apps Developer (native/cross-platform)</li>
+            <li>Full-Stack Web Developer</li>
+            <li>Lorem ipsum dolor sit. Lorem, ipsum.</li>
+            <li>Lorem, ipsum dolor Lorem, ipsum dolor.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+          </ul>
+        </div>
+        <div class="experince">
+          <h2 class="main-title">Experince</h2>
+          <ul>
+            <li>Worked for 2 Years at Goolge</li>
+            <li>Paraticipated in some open source projects</li>
+            <li>CEO of a Software Development Start-Up Company</li>
+            <li>Lied about the three previous onse</li>
+          </ul>
+        </div>
+      </section>
 
-        <p>Paragraph with lists <br>
-        <ul>
-            <li>item 1</li>
-            <li>item 2</li>
-            <li>item 3</li>
-            <li>item 4</li>
-        </ul>
-        <ol>
-            <li>Samsung</li>    
-            <li>Apple</li>
-            <li>Xiaomi</li>
-            <li>Oppo</li>
-            <li>Realme</li>
-        </ol>
-        </p>
+      <!-- ------------------- services section ------------------- -->
+      <!-- <section class="services">
+        <div>
+          <h2>Services Provided</h2>
+          <ul>
+            <li>Mobile Apps Developer (native/cross-platform)</li>
+            <li>Full-Stack Web Developer</li>
+            <li>Lorem ipsum dolor sit. Lorem, ipsum.</li>
+            <li>Lorem, ipsum dolor Lorem, ipsum dolor.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+          </ul>
+        </div>
 
-      </article>
+      </section> -->
+      <div class="services">
+        <h2 class="main-title">Services</h2>
+        <div class="container">
+          <div class="box">
+            <i class="fas fa-user-shield fa-4x"></i>
+            <h3>Security</h3>
+            <div class="info"><a href="#">Details</a></div>
+          </div>
+          <div class="box">
+            <i class="fas fa-tools fa-4x"></i>
+            <h3>Fixing Issues</h3>
+            <div class="info"><a href="#">Details</a></div>
+          </div>
+          <div class="box">
+            <i class="fas fa-map-marked-alt fa-4x"></i>
+            <h3>Location</h3>
+            <div class="info"><a href="#">Details</a></div>
+          </div>
+          <div class="box">
+            <i class="fas fa-laptop-code fa-4x"></i>
+            <h3>Location</h3>
+            <div class="info"><a href="#">Details</a></div>
+          </div>
+          <div class="box">
+            <i class="fas fa-palette fa-4x"></i>
+            <h3>Coding</h3>
+            <div class="info"><a href="#">Details</a></div>
+          </div>
+          <div class="box">
+            <i class="fas fa-bullhorn fa-4x"></i>
+            <h3>Marketing</h3>
+            <div class="info"><a href="#">Details</a></div>
+          </div>
+        </div>
 
+        <h2 class="main-title prev">Previous Work</h2>
+        <div class="work">
+          <ul>
+            <li>Worked for 2 Years at Goolge</li>
+            <li>Paraticipated in some open source projects</li>
+            <li>CEO of a Software Development Start-Up Company</li>
+            <li>Lied about the three previous onse</li>
+          </ul>
+        </div>
+      </div>
+      <!-- ------------------- contact us section ------------------- -->
+      <section class="contact">
+        <h2 class="main-title">Contact Us</h2>
+        <div class="form">
+          <div class="content">
+            <form action="">
+              <input
+                type="text"
+                class="input"
+                name="text"
+                placeholder="Your Name"
+              />
+              <input
+                type="email"
+                class="input"
+                name="email"
+                placeholder="Your Email"
+              />
+              <input
+                type="text"
+                class="input"
+                name="mobile"
+                placeholder="Your Phone"
+              />
+              <textarea
+                name="message"
+                class="input"
+                placeholder="Tell Us About Your Needs"
+                class="input"
+              ></textarea>
+              <input type="submit" value="Send" />
+            </form>
+          </div>
+        </div>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      </section>
     </main>
 
+    <!-- ------------------- footer ------------------- -->
     <footer>
-        <a href="https://twitter.com/?lang=en">Twitter</a>
-        <a href="https://www.youtube.com/">YouTube</a>
-        <a href="https://www.facebook.com/">facebook</a>
-        <a href="https://www.linkedin.com/">LinkedIn</a>
-
-        <p>Copy Rights&copy; 2022</p>
+      <p>Copy Rights 2022 &copy;</p>
+      <p>Made with <span>&hearts;</span> By Hamad</p>
     </footer>
   </body>
 </html>
