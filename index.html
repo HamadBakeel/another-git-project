@@ -17,16 +17,63 @@
     <header>
       <nav class="header">
         <div class="logo"><span>Web</span>Dev</div>
-        <div class="links">
-          <ul>
+        <button class="switch-btn">
+          <span style="color: var(--main-color)"
+            ><i class="fas fa-sun"></i>
+          </span>
+          <span> <i class="fas fa-moon"></i> </span>
+          <span class="switch"></span>
+        </button>
+        <button class="sidebar-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <aside class="sidebar">
+          <div class="sidebar-header">
+            <!-- <div class="logo"><span>Web</span>Dev</div> -->
+            <img src="imgs/logo2.png" class="logo" alt="logo" />
+            <button class="close-btn">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+
+          <!-- links -->
+          <ul class="links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about-us">About Us</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact Us</a></li>
           </ul>
-        </div>
+
+          <!-- social media -->
+          <ul class="social-icons">
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-behance"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-sketch"></i>
+              </a>
+            </li>
+          </ul>
+        </aside>
       </nav>
-  
     </header>
     <main>
       <!-- ------------------- home section ------------------- -->
@@ -38,14 +85,15 @@
           <p class="who">Full-Stack Developer</p>
           <h1 class="name">Hamad Bakeel</h1>
           <p class="def">
-            I'm a web developer who loves programming <br/> <br>
+            I'm a guy who loves Software Development <br />
+            <br />
             learning new stuff is my full-time job
           </p>
         </article>
       </section>
 
       <!-- ------------------- about us section ------------------- -->
-      <section class="about-us container id="about-us">
+      <section class="about-us container" id="about-us">
         <div class="skills">
           <div class="main-heading">
             <h2>skills</h2>
@@ -76,15 +124,8 @@
               </div>
             </div>
           </div>
-
-          <!-- <ul>
-            <li>Mobile Apps Developer (native/cross-platform)</li>
-            <li>Full-Stack Web Developer</li>
-            <li>Lorem ipsum dolor sit. Lorem, ipsum.</li>
-            <li>Lorem, ipsum dolor Lorem, ipsum dolor.</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-          </ul> -->
         </div>
+
         <div class="experince">
           <div class="main-heading">
             <h2>experince</h2>
@@ -141,57 +182,47 @@
           <h2>previous work</h2>
         </div>
 
-  
-          <div class="photo-grid">
-            <div
-              class="card card-tall card-wide"
-              style="
-                background-image: url('imgs/img1.jpg');
-              "
-            >
-              <a href="#services" class="show-me">show me</a>
-            </div>
-            <div
-              class="card card-tall"
-              style="
-                background-image: url('imgs/img2.jpg');
-              "
-            >
+        <div class="photo-grid">
+          <div
+            class="card card-tall card-wide"
+            style="background-image: url('imgs/template6.jpg')"
+          >
             <a href="#services" class="show-me">show me</a>
           </div>
-            <div
-              class="card"
-              style="
-                background-image: url('imgs/img3.jpg');
-              "
-            >
+
+          <!-- <div class="card-container"> -->
+          <div
+            class="card card-tall"
+            style="background-image: url('imgs/template5.jpg')"
+          >
             <a href="#services" class="show-me">show me</a>
           </div>
-            <div
-              class="card"
-              style="
-                background-image: url('imgs/img4.jpg');
-              "
-            >
+          <!-- </div> -->
+
+          <!-- <div class="card-container"> -->
+          <div class="card" style="background-image: url('imgs/template1.jpg')">
             <a href="#services" class="show-me">show me</a>
           </div>
-            <div
-              class="card"
-              style="
-                background-image: url('imgs/img5.jpg');
-              "
-            >
+          <!-- </div> -->
+
+          <!-- <div class="card-container"> -->
+          <div class="card" style="background-image: url('imgs/template4.png')">
             <a href="#services" class="show-me">show me</a>
           </div>
-            <div
-              class="card"
-              style="
-                background-image: url('imgs/img6.jpg');
-              "
-            >
+          <!-- </div> -->
+
+          <!-- <div class="card-container"> -->
+          <div class="card" style="background-image: url('imgs/template3.jpg')">
             <a href="#services" class="show-me">show me</a>
           </div>
-            <!-- <div
+          <!-- </div> -->
+
+          <!-- <div class="card-container"> -->
+          <div class="card" style="background-image: url('imgs/template2.png')">
+            <a href="#services" class="show-me">show me</a>
+          </div>
+          <!-- </div> -->
+          <!-- <div
               class="card card-wide"
               style="
                 background-image: url('https://images.unsplash.com/photo-1583562835057-a62d1beffbf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=949&q=80');
@@ -239,11 +270,7 @@
             >
               12
             </div> -->
-          </div>
-      
-
-
-
+        </div>
       </div>
 
       <!-- ------------------- contact us section ------------------- -->
@@ -252,49 +279,78 @@
           <h2>Contact Us</h2>
         </div>
         <div class="form">
-          <div class="content">
-            <form action="">
-              <input
-                type="text"
-                class="input"
-                name="text"
-                placeholder="Your Name"
-              />
-              <input
-                type="email"
-                class="input"
-                name="email"
-                placeholder="Your Email"
-              />
-              <input
-                type="text"
-                class="input"
-                name="mobile"
-                placeholder="Your Phone"
-              />
-              <textarea
-                name="message"
-                class="input"
-                placeholder="Tell Us About Your Needs"
-                class="input"
-              ></textarea>
-              <input type="submit" value="Send" />
-            </form>
-          </div>
-        </div>
-        <div class="social">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+          <form action="">
+            <div class="inputs">
+              <div>
+                <input
+                  type="text"
+                  id="name"
+                  class="input"
+                  name="text"
+                  placeholder="Your  Name"
+                />
+                <div class="error" id="error"></div>
+              </div>
+
+              <div>
+                <input
+                  type="email"
+                  id="email"
+                  class="input"
+                  name="email"
+                  placeholder="Your Email"
+                />
+                <div class="error" id="error"></div>
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  id="phone"
+                  class="input"
+                  name="mobile"
+                  placeholder="Your Phone"
+                />
+                <div class="error" id="error"></div>
+              </div>
+            </div>
+            <div class="area">
+              <div>
+                <textarea
+                  name="message"
+                  id="message"
+                  class="input"
+                  placeholder="Tell Us About Your Needs"
+                  class="input"
+                ></textarea>
+                <div class="error" id="error"></div>
+              </div>
+              <input type="submit" value="Send" id="submit" />
+            </div>
+          </form>
         </div>
       </section>
     </main>
 
     <!-- ------------------- footer ------------------- -->
     <footer>
-      <p>Copy Rights 2022 &copy;</p>
-      <p>Made With <span>&hearts;</span> By Hamad</p>
+      <div class="img">
+        <img src="imgs/footer-img.png" alt="" />
+      </div>
+      <div class="text">
+        <p>Copy Rights 2022 &copy;</p>
+        <p>Made With <span>&hearts;</span> By Hamad</p>
+      </div>
+      <div class="social">
+        <a href="#" style="padding: 7px 14px"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" style="padding: 7px"><i class="fab fa-youtube"></i></a>
+      </div>
     </footer>
+
+    <script src="main.js"></script>
   </body>
 </html>
