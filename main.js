@@ -153,7 +153,11 @@ function showMessage(element, message, state) {
 const images = document.querySelectorAll(".card");
 console.log(images);
 images.forEach(function (image) {
-  image.addEventListener("onmouseleave", function () {
+  image.addEventListener("mouseenter", function () {
     image.classList.add("card-hover");
   });
+  image.addEventListener("mouseleave", function () {
+    image.classList.remove("card-hover");
+  });
 });
+document.addEventListener("mouseleave");
