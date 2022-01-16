@@ -152,6 +152,7 @@ function showMessage(element, message, state) {
 // ---------------- image effect ------------------
 const images = document.querySelectorAll(".card");
 console.log(images);
+
 images.forEach(function (image) {
   image.addEventListener("mouseenter", function () {
     image.classList.add("card-hover");
