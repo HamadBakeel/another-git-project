@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <title>Portfolio</title>
+    <style>
+      @import url("css/base.css");
+      @import url("css/photo-grid.css");
+    </style>
+  </head>
+  <body>
+    <%- include('partials/header'); %> 
+    <main>
+      <!-- ------------------- home section ------------------- -->
+      <section class="home container" id="home">
+        <div class="me">
+          <img src="imgs/hamad1.jpg" alt="hamad" />
+        </div>
+        <article class="intro">
+          <p class="who">Full-Stack Developer</p>
+          <h1 class="name">Hamad Bakeel</h1>
+          <p class="def">
+            I'm a guy who loves Software Development <br />
+            <br />
+            learning new stuff is my full-time job
+          </p>
+        </article>
+      </section>
+
+      <!-- ------------------- about us section ------------------- -->
+      <section class="about-us container" id="about-us">
+        <div class="skills">
+          <div class="main-heading">
+            <h2>skills</h2>
+          </div>
+          <div class="skills">
+            <div class="skill">
+              <h3>HTML <span>80%</span></h3>
+              <div class="the-progress">
+                <span style="width: 80%"></span>
+              </div>
+            </div>
+            <div class="skill">
+              <h3>CSS <span>85%</span></h3>
+              <div class="the-progress">
+                <span style="width: 85%"></span>
+              </div>
+            </div>
+            <div class="skill">
+              <h3>JavaScript <span>90%</span></h3>
+              <div class="the-progress">
+                <span style="width: 90%"></span>
+              </div>
+            </div>
+            <div class="skill">
+              <h3>PHP <span>70%</span></h3>
+              <div class="the-progress">
+                <span style="width: 70%"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="experince">
+          <div class="main-heading">
+            <h2>experince</h2>
+          </div>
+          <ul>
+            <li>Worked for 2 Years at Google</li>
+            <li>Paraticipated in some open-source projects</li>
+            <li>CEO of a Software Development Start-Up Company</li>
+            <li>Lied about the three previous onse</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ------------------- services section ------------------- -->
+
+      <div class="services" id="services">
+        <div class="main-heading">
+          <h2>services</h2>
+        </div>
+        <div class="container">
+          <% for(let i=0 ; i<services.length ; i++) { %> 
+            <div class="box">
+            <i class="<%= servicesIcons[i]%> "></i>
+              <h3><%= services[i] %> </h3>
+              <div class="info"><a href="#">Details</a></div>
+            </div>
+            <% } %> 
+          </div>
+
+        <div class="main-heading">
+          <h2>previous work</h2>
+        </div>
+
+        <div class="photo-grid">
+          <div
+            class="card card-tall card-wide"
+            style="background-image: url('imgs/template6.jpg')"
+          >
+            <a href="#services" class="show-me">show me</a>
+          </div>
+
+          <div
+            class="card card-tall"
+            style="background-image: url('imgs/template5.jpg')"
+          >
+            <a href="#services" class="show-me">show me</a>
+          </div>
+
+
+         
+          <% for(let i=1 ; i<=4 ; i++){ %> 
+            <div class="card" style="background-image: url('imgs/template<%=i%>.png')">
+              <a href="#services" class="show-me">show me</a>
+            </div>  
+            <% } %> 
+
+        </div>
+      </div>
+
+      <!-- ------------------- contact us section ------------------- -->
+      <section class="contact" id="contact">
+        <div class="main-heading">
+          <h2>Contact Us</h2>
+        </div>
+        <div class="form">
+          <form action="">
+            <div class="inputs">
+              <div>
+                <input
+                  type="text"
+                  id="name"
+                  class="input"
+                  name="text"
+                  placeholder="Your  Name"
+                />
+                <div class="error" id="error"></div>
+              </div>
+
+              <div>
+                <input
+                  type="email"
+                  id="email"
+                  class="input"
+                  name="email"
+                  placeholder="Your Email"
+                />
+                <div class="error" id="error"></div>
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  id="phone"
+                  class="input"
+                  name="mobile"
+                  placeholder="Your Phone"
+                />
+                <div class="error" id="error"></div>
+              </div>
+            </div>
+            <div class="area">
+              <div>
+                <textarea
+                  name="message"
+                  id="message"
+                  class="input"
+                  placeholder="Tell Us About Your Needs"
+                  class="input"
+                ></textarea>
+                <div class="error" id="error"></div>
+              </div>
+              <input type="submit" value="Send" id="submit" />
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ------------------- footer ------------------- -->
+    <%- include('partials/footer') %> 
+    <script src="main.js"></script>
+  </body>
+</html>
