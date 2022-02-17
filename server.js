@@ -4,6 +4,7 @@ server.set('view engine', 'ejs')
 server.use(express.static(__dirname + '/public'));
 server.set('views', __dirname+'/views');
 // server.listen(7000);
+const port = process.env.PORT || 3000
 
 const servicesIcons =[
     'fas fa-user-shield fa-4x ',
@@ -24,3 +25,5 @@ const services =[
 server.get('/',(req, res)=>{
     res.render('index',{servicesIcons,services});
 });
+
+server.listen(port);
