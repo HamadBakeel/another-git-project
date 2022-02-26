@@ -39,16 +39,16 @@
             <h2>skills</h2>
           </div>
           <div class="skills">
-            <% const percentages = [80,90,95,75];%> 
-            <% const skills = ["HTML","CSS","JavaScript","PHP"];%> 
-            <% for( let index = 0; index < percentages.length; index++ ) { %>
-              <div class="skill">
-                <h3><%- skills[index]  %>  <span><%- percentages[index]%> %</span></h3>
-                <div class="the-progress">
-                  <span style="width: <%-percentages[index]%>% "></span>
-                </div>
-              </div>
-            <% } %>
+            <div class="skills mb-3">
+              <% for( let i = 0; i < skills.length; i++ ) { %>
+                  <div class="skill">
+                      <h3><%- skills[i].skillName%>  <span><%-skills[i].percentage%></span></h3>
+                      <div class="the-progress">
+                          <span style="width: <%=skills[i].percentage%>% "></span>
+                      </div>
+                  </div>
+              <% } %>
+          </div>  
             <!-- <div class="skill">
               <h3>HTML <span>80%</span></h3>
               <div class="the-progress">

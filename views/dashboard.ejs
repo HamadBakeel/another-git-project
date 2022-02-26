@@ -134,6 +134,48 @@
                 font-size: .9rem;
             }
         }
+        .skill {
+        margin-bottom: 5px;
+        }
+        .skill h3 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 7px;
+        }
+        .skill h3 span {
+        color: #777;
+        font-weight: bold;
+        font-size: 12px;
+        border: 1px solid;
+        padding: 3px 5px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        }
+        .skills .the-progress {
+        width: 100%;
+        background-color: #ddd;
+        height: 20px;
+        border-radius: 5px;
+        position: relative;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        }
+        .skills .the-progress span {
+        background-color: #777;
+        height: 100%;
+        position: absolute;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        }
+
     </style>
 </head>
 <body>
@@ -325,21 +367,21 @@
                     <h2 class="mb-5 text-center">Qualifications</h2>
                     <h3 class="mb-5 text-center">Comming Soon ...</h3>
                 </div>
+                
+                <!------------------ Skills Section ------------------>
                 <div class="skills edit d-none">
                     <h2 class="mb-5 text-center">Skills</h2>
                     <button class="btn edit-button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         <i style="font-size: 35px"  class="far fa-plus-square text-primary"></i>
                     </button>
-                    <div class="skills">
-                        <% const percentages = [80,90,95,75];%> 
-                        <% const skills = ["HTML","CSS","JavaScript","PHP"];%> 
-                        <% for( let index = 0; index < percentages.length; index++ ) { %>
-                        <div class="skill">
-                            <h3><%- skills[index]  %>  <span><%- percentages[index]%> %</span></h3>
-                            <div class="the-progress">
-                                <span style="width: <%-percentages[index]%>% "></span>
+                    <div class="skills mb-3">
+                        <% for( let i = 0; i < skills.length; i++ ) { %>
+                            <div class="skill">
+                                <h3><%- skills[i].skillName%>  <span><%-skills[i].percentage%></span></h3>
+                                <div class="the-progress">
+                                    <span style="width: <%=skills[i].percentage%>% "></span>
+                                </div>
                             </div>
-                        </div>
                         <% } %>
                     </div>                
                 </div>

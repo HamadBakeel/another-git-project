@@ -39,15 +39,16 @@ const services =[
     "Marketing"
 ]
 
-server.get('/', (_, res)=>{
+server.get('/', async(_, res)=>{
     // const skills = mongoose.model('skills',skillSchema);
     // console.log(skills.find());
-    res.render('index',{servicesIcons,services});
+    const skills = await Skill.find();
+    res.render('index',{servicesIcons,services,skills});
 });
 server.get('/dashboard', async (_, res)=>{
-    const skill = await Skill.find({ skillName: 'zero skill'}).exec();
-    console.log(skill.skillName);
-    res.render('dashboard');
+    const skills = await Skill.find();
+    console.log(skills);
+    res.render('dashboard',{skills: skills});
 });
 
 
