@@ -1,25 +1,17 @@
 const express = require('express');
 const Skill = require('./models/skill');
 const mongoose = require('mongoose');
-// import {express} from 'express'
-// import {Skill} from './models/skill'
-// import {mongoose} from 'mongoose'
+const methodOverride = require('method-override')
 const server = express();
 server.set('view engine', 'ejs')
 server.use(express.static( 'public'));
 server.set('views','views');
 
+server.use(methodOverride('_method'))
 server.use(express.urlencoded({extended: false}))
 
 mongoose.connect('mongodb://localhost/portfolio'
-    ,(db) => {
-        // if (err) throw err;
-        // var dbo = db.db("portfolio");
-        // dbo.collection("skills").find({}).toArray((err, result)=> console.log(result))
-        console.log("database connected successfully");
-        
-        // const skill =  Skill.findOne({skillName: 'a name'}).select('percentage skillName');
-    }
+    ,() => console.log("database connected successfully")
     ,e => console.error(e));
 
 const servicesIcons =[
@@ -40,35 +32,37 @@ const services =[
 ]
 
 server.get('/', async(_, res)=>{
-    // const skills = mongoose.model('skills',skillSchema);
-    // console.log(skills.find());
     const skills = await Skill.find();
     res.render('index',{servicesIcons,services,skills});
 });
 server.get('/dashboard', async (_, res)=>{
     const skills = await Skill.find();
-    console.log(skills);
     res.render('dashboard',{skills: skills});
 });
 
 
-server.post('/',async (req,res)=>{
+server.post('/', (req,res)=>{
+    insertSkill(req,res);
+    // const skill = Skill.findOne({skillName: req.body.})
+})
+server.delete('/:id',async (req,res)=>{
+    await Skill.findOneAndDelete(req.params.skillName);
+    console.log("mama");
+    res.redirect('/dashboard')
+})
+
+async function insertSkill (req,res) {
     const skill = new Skill({
         skillName: req.body.skillName,
         percentage: req.body.percentage,
     });
     try{
-        await skill.save(()=> {
-            // console.log("data added successfully  "+req.body.skillName,"  ",req.body.percentage);
-            console.log(skill);
-        });
+        await skill.save();
         res.redirect('/dashboard');
     } catch(e){
         res.send("failed to add data");
     }
-})
-
-
+}
 
 
 const port = process.env.PORT || 3000

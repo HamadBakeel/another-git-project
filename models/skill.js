@@ -9,6 +9,10 @@ const skillSchema = new mongoose.Schema({
     percentage:{
         type: String,
         required: true
+    },
+    dateCreated:{
+        type: Date,
+        default: new Date()
     }
 })
 
