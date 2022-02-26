@@ -39,7 +39,17 @@
             <h2>skills</h2>
           </div>
           <div class="skills">
-            <div class="skill">
+            <% const percentages = [80,90,95,75];%> 
+            <% const skills = ["HTML","CSS","JavaScript","PHP"];%> 
+            <% for( let index = 0; index < percentages.length; index++ ) { %>
+              <div class="skill">
+                <h3><%- skills[index]  %>  <span><%- percentages[index]%> %</span></h3>
+                <div class="the-progress">
+                  <span style="width: <%-percentages[index]%>% "></span>
+                </div>
+              </div>
+            <% } %>
+            <!-- <div class="skill">
               <h3>HTML <span>80%</span></h3>
               <div class="the-progress">
                 <span style="width: 80%"></span>
@@ -62,7 +72,7 @@
               <div class="the-progress">
                 <span style="width: 70%"></span>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
