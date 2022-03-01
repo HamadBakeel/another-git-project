@@ -41,12 +41,14 @@
           <div class="skills">
             <div class="skills mb-3">
               <% for( let i = 0; i < skills.length; i++ ) { %>
+                <% if (skills[i].isDeleted == true) { %>
                   <div class="skill">
-                      <h3><%- skills[i].skillName%>  <span><%-skills[i].percentage%></span></h3>
-                      <div class="the-progress">
-                          <span style="width: <%=skills[i].percentage%>% "></span>
-                      </div>
+                    <h3><%- skills[i].skillName%>  <span><%-skills[i].percentage%></span></h3>
+                    <div class="the-progress">
+                      <span style="width: <%=skills[i].percentage%>% "></span>
+                    </div>
                   </div>
+                  <% } %>  
               <% } %>
           </div>  
             <!-- <div class="skill">

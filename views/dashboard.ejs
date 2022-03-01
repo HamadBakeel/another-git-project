@@ -1,148 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
+    <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
-        body{
-            background-color: #f8f9fa;
-        }
-        .img-container, .name-container{
-            position: relative;
-        }
+      body {
+        background-color: #f8f9fa;
+      }
 
-        .name-container .edit-button,
-        .img-container .edit-button {
-            /* background-color: #0dcaf0; */
-            border-radius: 50%;
-            padding: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            /* border: 2px solid white */
-        }
+      .img-container,
+      .name-container {
+        position: relative;
+      }
 
-        .img-container .edit-button {
-            bottom: 25%;
-            right: -3%;
-            box-shadow: 0px 0px 4px 1px grey;
+      .name-container .edit-button,
+      .img-container .edit-button {
+        /* background-color: #0dcaf0; */
+        border-radius: 50%;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        /* border: 2px solid white */
+      }
 
-        }
-        /* .img-container .edit-button:hover{
+      .img-container .edit-button {
+        bottom: 25%;
+        right: -3%;
+        box-shadow: 0px 0px 4px 1px grey;
+      }
+      /* .img-container .edit-button:hover{
             box-shadow: 0px 0px 10px 0px grey;
 
         } */
-        .name-container .edit-button{
-            /* bottom: 0;
+
+      .name-container .edit-button {
+        /* bottom: 0;
             right: 0; */
-            position: static;
-            display: inline;
-            background-color: transparent;
-            border: none;
+        position: static;
+        display: inline;
+        background-color: transparent;
+        border: none;
+      }
+
+      h5.name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .img-container img:last-child,
+      .name-container .edit-button img {
+        width: 16px;
+      }
+
+      .tabs ul {
+        margin: 0;
+        padding-inline-start: 0;
+      }
+
+      .tabs li {
+        list-style-type: none;
+        font-weight: bold;
+        cursor: pointer;
+        margin-block: 15px;
+        color: #aaa;
+        transition: 0.3s;
+      }
+
+      .tabs li:hover {
+        color: rgb(0, 0, 0);
+        /* padding-inline-start: 5px; */
+      }
+
+      .tabs li img {
+        max-width: 30px;
+      }
+
+      .edit {
+        position: relative;
+      }
+
+      .personal-info h2 {
+        font-size: 2rem;
+      }
+
+      .personal-info div span:first-child {
+        font-weight: bolder;
+        font-size: 1.2rem;
+        min-width: 150px;
+      }
+
+      .personal-info div {
+        display: flex;
+      }
+
+      .edit .edit-button {
+        position: absolute;
+        top: 0;
+        left: 5%;
+      }
+
+      .edit .edit-button img {
+        width: 30px;
+      }
+
+      .card-body p {
+        margin: 0;
+      }
+
+      .btns {
+        bottom: 0;
+        right: 0;
+      }
+
+      @media (max-width: 768px) {
+        .sideBar {
+          width: 110px !important;
+          padding: 0 12px;
         }
-        h5.name{
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .sideBar .img-container > img {
+          width: 70px;
         }
-        .img-container img:last-child,
-        .name-container .edit-button img{
-            width: 16px;
+        .sideBar .edit-button {
+          display: none;
         }
- 
-        
-        .tabs ul{
-            margin: 0;
-            padding-inline-start: 0;
+        .sideBar .name {
+          font-size: 0.7rem;
         }
-        .tabs li{
-            list-style-type: none;
-            font-weight: bold;
-            cursor: pointer;
-            margin-block: 15px;
-            color: #aaa;
-            transition: .3s;
+        .sideBar ul li {
+          font-size: 0;
         }
-        .tabs li:hover{
-            color: rgb(0, 0, 0);
-            /* padding-inline-start: 5px; */
+        .sideBar .profile {
+          width: 90px !important;
         }
-        .tabs li img{
-            max-width: 30px;
+        .card {
+          font-size: 0.7rem !important;
         }
-        .edit{
-            position: relative;
+        .card-title {
+          font-size: 0.9rem;
         }
-        .personal-info h2{
-            font-size: 2rem;
-        }
-        .personal-info div span:first-child{
-            font-weight: bolder;
-            font-size: 1.2rem;
-            min-width: 150px;
-        }
-        .personal-info div{
-            display: flex
-        }
-        
-        .edit .edit-button {
-            position: absolute;
-            top: 0;
-            left: 5%;
-        }
-        .edit .edit-button img{
-            width: 30px;
-        }
-           
-        .card-body p{
-            margin: 0
-        }
-        .btns{
-            bottom: 0;
-            right: 0;
-        }
-        @media (max-width: 768px) {
-            .sideBar{
-                width: 110px !important;
-                padding: 0 12px;
-            }
-               .sideBar .img-container > img{
-                width: 70px;
-            }
-            .sideBar .edit-button {
-                display: none;
-            }
-            .sideBar .name{
-                font-size: .7rem;
-            }
-            .sideBar ul li{
-                font-size: 0;
-            }
-            .sideBar .profile{
-                width: 90px !important;
-            }
-            .card{
-                font-size: .7rem !important;
-            }
-            .card-title{
-                font-size: .9rem;
-            }
-        }
-        .skill {
+      }
+
+      .skill {
         margin-bottom: 5px;
-        }
-        .skill h3 {
+      }
+
+      .skill h3 {
         display: flex;
         justify-content: space-between;
         margin-bottom: 7px;
-        }
-        .skill h3 span {
+      }
+
+      .skill h3 span {
         color: #777;
         font-weight: bold;
         font-size: 12px;
@@ -153,8 +175,9 @@
         -moz-border-radius: 5px;
         -ms-border-radius: 5px;
         -o-border-radius: 5px;
-        }
-        .skills .the-progress {
+      }
+
+      .skills .the-progress {
         width: 100%;
         background-color: #ddd;
         height: 20px;
@@ -164,8 +187,9 @@
         -moz-border-radius: 5px;
         -ms-border-radius: 5px;
         -o-border-radius: 5px;
-        }
-        .skills .the-progress span {
+      }
+
+      .skills .the-progress span {
         background-color: #777;
         height: 100%;
         position: absolute;
@@ -174,329 +198,609 @@
         -moz-border-radius: 5px;
         -ms-border-radius: 5px;
         -o-border-radius: 5px;
-        }
-
+      }
     </style>
-</head>
-<body>
+  </head>
+
+  <body>
     <section class="dashboard container-fluid d-flex p-0">
-        <div class="sideBar col-3 col-md-2 " style="background-color: #e5e5e5;  height:100vh; width: 220px">
-            <div class="profile col rounded-pill bg-white mt-2 d-flex align-items-center m-auto flex-column" 
-                style="    width: 180px;
-                height: 80vh;"
+      <%- include('partials/sidebar') %>
+      <div class="col-9 p-3 bg-light">
+        <div class="tabs-content">
+          <div class="personal-info edit">
+            <h2 class="mb-5 text-center">Personal Info</h2>
+            <div class="mb-3">
+              <span>First Name </span>
+              <span><%-personalInfo[0].firstName%> </span>
+            </div>
+            <div class="mb-3">
+              <span>Last Name</span>
+              <span><%-personalInfo[0].lastName%> </span>
+            </div>
+            <div class="mb-3">
+              <span>Home Address</span>
+              <span
+                ><%-personalInfo[0].Address.country%> -
+                <%-personalInfo[0].Address.city%> -
+                <%-personalInfo[0].Address.street%>
+              </span>
+              <!-- <span> Center 8th floor, 379 Hudson St, New York, NY 10018 US</span> -->
+            </div>
+            <div class="mb-3">
+              <span>Phone Number</span>
+              <span>+<%-personalInfo[0].phoneNumbers.work%> </span>
+            </div>
+            <div class="mb-3">
+              <span>Job Title</span>
+              <span><%-personalInfo[0].jobTitle%> </span>
+            </div>
+            <button
+              class="btn edit-button"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
             >
-            <div class="profile-content ">
-                <div class="img-container">
-                    <img src="imgs/profileIimage.png"  alt="" width="150"class="pb-4 rounded-circle  profile-img">
-                    <button class="btn edit-button "><img src="imgs/edit.png" alt=""></button>
-                </div>
-               <div class="name-container">
-                <h5 class="name fw-bolde text-center">Hamad Bakeel
-                <button class="btn edit-button"><img src="imgs/edit.png" alt=""></button>
-            </h5>   
-            </div>
-            </div>
+              <img src="imgs/edit.png" alt="" />
+            </button>
+            <!-- <button class="btn edit-button"><img src="imgs/edit.png" alt=""></button> -->
+          </div>
 
-            <div class="tabs">
-                <ul class="mt-5">
-                    <li id="personal"><img src="imgs/personal-info.svg" alt=""> Personal Info</li>
-                    <li id="courses"><img src="imgs/courses.svg" alt=""> Course</li>
-                    <li id="experince"><img src="imgs/experince.png" alt=""> Experience</li>
-                    <li id="qualifications"><img src="imgs/qualification.png" alt=""> Qualification</li>
-                    <li id="skills"><img src="imgs/skills.png" alt=""> Skills</li>
-                </ul>
+          <div class="courses edit d-none">
+            <h2 class="mb-5 text-center">Courses</h2>
+            <button
+              class="btn edit-button"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              <i
+                style="font-size: 35px"
+                class="far fa-plus-square text-primary"
+              ></i>
+            </button>
+            <div
+              class="card mb-3 m-auto justify-content-"
+              style="max-width: 540px"
+            >
+              <div class="row g-0">
+                <div class="col-md-4 d-flex justify-content-center p-1">
+                  <img
+                    src="assets/images/svg/HTML5_logo_and_wordmark.svg"
+                    style="max-height: 180px"
+                    class="img-fluid rounded-start"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8" style="min-width: fit-content">
+                  <div class="card-body position-relative">
+                    <h5 class="card-title mb-3 fw-bolder">HTML5</h5>
+                    <p class="card-text">
+                      <strong>Studied In : </strong>Rwad Academy
+                    </p>
+                    <p class="card-text"><strong>Date : </strong>2021</p>
+                    <p class="card-text">
+                      <strong>instructor : </strong>Eng. Mokhtar Ghalib
+                    </p>
+                    <p class="card-text"><strong>Mark : </strong>100%</p>
+                    <div class="btns position-absolute">
+                      <button class="btn text-danger">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                      <button class="btn text-success">
+                        <i class="far fa-edit"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div class="card m-auto mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4 d-flex justify-content-center p-1">
+                  <img
+                    src="assets/images/svg/CSS3_logo_and_wordmark.svg"
+                    style="max-height: 180px"
+                    class="img-fluid rounded-start"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3 fw-bolder">CSS3</h5>
+                    <p class="card-text">
+                      <strong>Studied In : </strong>Rwad Academy
+                    </p>
+                    <p class="card-text"><strong>Date : </strong>2021</p>
+                    <p class="card-text">
+                      <strong>instructor : </strong>Eng. Mokhtar Ghalib
+                    </p>
+                    <p class="card-text"><strong>Mark : </strong>100%</p>
+                    <div class="btns position-absolute">
+                      <button class="btn text-danger">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                      <button class="btn text-success">
+                        <i class="far fa-edit"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div class="card m-auto mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4 d-flex justify-content-center p-1">
+                  <img
+                    src="assets/images/svg/Unofficial_JavaScript_logo_2.svg"
+                    style="max-height: 180px"
+                    class="img-fluid rounded-start"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3 fw-bolder">JavaScript</h5>
+                    <p class="card-text">
+                      <strong>Studied In : </strong>Rwad Academy
+                    </p>
+                    <p class="card-text"><strong>Date : </strong>2021</p>
+                    <p class="card-text">
+                      <strong>instructor : </strong>Eng. Mokhtar Ghalib
+                    </p>
+                    <p class="card-text"><strong>Mark : </strong>100%</p>
+                    <div class="btns position-absolute">
+                      <button class="btn text-danger">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                      <button class="btn text-success">
+                        <i class="far fa-edit"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card m-auto mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4 d-flex justify-content-center p-1">
+                  <img
+                    src="assets/images/svg/React-icon.svg"
+                    style="max-height: 180px"
+                    class="img-fluid rounded-start"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3 fw-bolder">React</h5>
+                    <p class="card-text">
+                      <strong>Studied In : </strong>Rwad Academy
+                    </p>
+                    <p class="card-text"><strong>Date : </strong>2021</p>
+                    <p class="card-text">
+                      <strong>instructor : </strong>Eng. Mokhtar Ghalib
+                    </p>
+                    <p class="card-text"><strong>Mark : </strong>100%</p>
+                    <div class="btns position-absolute">
+                      <button class="btn text-danger">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                      <button class="btn text-success">
+                        <i class="far fa-edit"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="experince d-none edit">
+            <h2 class="mb-5 text-center">Experience</h2>
+            <button
+              class="btn edit-button"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              <i
+                style="font-size: 35px"
+                class="far fa-plus-square text-primary"
+              ></i>
+            </button>
+            <div
+              class="card bg-dark mb-3 text-white m-auto"
+              style="max-width: 500px !important"
+            >
+              <img
+                src="assets/images/experince1.jpg"
+                width="400"
+                class="card-img"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">
+                  More Than 6 Years of Experience In The Tech Industry
+                </h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="btns position-absolute">
+                <button class="btn text-danger">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+                <button class="btn text-success">
+                  <i class="far fa-edit"></i>
+                </button>
+              </div>
+            </div>
+            <div
+              class="card bg-dark mb-3 text-white m-auto"
+              style="max-width: 500px !important"
+            >
+              <img
+                src="assets/images/experince2.jpg"
+                width="400"
+                class="card-img"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">
+                  More Than 6 Years of Experience In The Tech Industry
+                </h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="btns position-absolute">
+                <button class="btn text-danger">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+                <button class="btn text-success">
+                  <i class="far fa-edit"></i>
+                </button>
+              </div>
+            </div>
+            <div
+              class="card bg-dark mb-3 text-dark m-auto"
+              style="max-width: 500px !important"
+            >
+              <img
+                src="assets/images/experince3.jpg"
+                width="400"
+                class="card-img"
+                alt="..."
+              />
+              <div class="card-img-overlay position-absolute mt-3 bottom-0">
+                <h5 class="card-title">Worked With Many Teams</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="btns position-absolute">
+                <button class="btn text-danger">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+                <button class="btn text-success">
+                  <i class="far fa-edit"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="qualifications d-none edit">
+            <h2 class="mb-5 text-center">Services</h2>
+            <form action="/services/insertService">
+              <button class="btn edit-button">
+                <i
+                  style="font-size: 35px"
+                  class="far fa-plus-square text-primary"
+                ></i>
+              </button>
+            </form>
+            <% for( let i = 0; i < services.length; i++ ) { %> <% if
+            (services[i].isDeleted) { %>
+            <div class="border py-3 px-1 mb-2 bg-secondary rounded">
+              <div
+                class="content"
+                style="
+                  display: flex;
+                  align-items: center;
+                  flex-direction: column;
+                "
+              >
+                <h2><%- services[i].serviceName %></h2>
+                <p style="font-size: 50px; font-weight: bold">
+                  <%- services[i].servedClients %>
+                </p>
+                <p><%- services[i].serviceDescription %></p>
+              </div>
+              <div class="forms d-flex justify-content-end mt-2">
+                <form
+                  action="/services/<%=services[i].id %>  ?_method=DELETE"
+                  method="post"
+                >
+                  <button class="btn-danger btn mt-1">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </form>
+                <form
+                  action="/services/edit/<%= services[i].id%> "
+                  method="post"
+                >
+                  <button class="btn-secondary btn py-0 px-2 mt-1 mx-2">
+                    <i class="fa-solid fa-edit"></i>
+                  </button>
+                </form>
+                <form
+                  action="/services/disable/<%=services[i].id%> "
+                  method="post"
+                >
+                  <button class="btn btn-warning">
+                    <i class="fa-regular fa-eye-slash"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <% }else{ %>
+            <div class="border py-3 px-1 mb-2 rounded">
+              <div
+                class="content"
+                style="
+                  display: flex;
+                  align-items: center;
+                  flex-direction: column;
+                "
+              >
+                <h2><%- services[i].serviceName %></h2>
+                <p style="font-size: 50px; font-weight: bold">
+                  <%- services[i].servedClients %>
+                </p>
+                <p><%- services[i].serviceDescription %></p>
+              </div>
+              <div class="forms d-flex justify-content-end mt-2">
+                <form
+                  action="/services/<%=services[i].id %>  ?_method=DELETE"
+                  method="post"
+                >
+                  <button class="btn-outline-danger btn mt-1">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </form>
+                <form
+                  action="/services/edit/<%= services[i].id%> "
+                  method="post"
+                >
+                  <button class="btn-outline-secondary btn py-0 px-2 mt-1 mx-2">
+                    <i class="fa-solid fa-edit"></i>
+                  </button>
+                </form>
+                <form
+                  action="/services/disable/<%=services[i].id%> "
+                  method="post"
+                >
+                  <button class="btn btn-outline-warning">
+                    <i class="fa-regular fa-eye-slash"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <% } %> <% } %>
+          </div>
+
+          <!------------------ Skills Section ------------------>
+          <div class="skills edit d-none">
+            <h2 class="mb-5 text-center">Skills</h2>
+            <button
+              class="btn edit-button"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              <i
+                style="font-size: 35px"
+                class="far fa-plus-square text-primary"
+              ></i>
+            </button>
+            <div class="skills mb-3">
+              <% for( let i = 0; i < skills.length; i++ ) { %> <% if
+              (skills[i].isDeleted === true) { %>
+              <div class="skill border rounded p-2 mb-3">
+                <h3>
+                  <%- skills[i].skillName%>
+                  <span><%-skills[i].percentage%></span>
+                </h3>
+                <div class="the-progress">
+                  <span style="width: <%=skills[i].percentage%>%"></span>
+                </div>
+                <div class="forms d-flex justify-content-end mt-2">
+                  <form
+                    action="/skills/<%=skills[i].id%>  ?_method=DELETE"
+                    method="post"
+                  >
+                    <button class="btn-outline-danger btn mt-1">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </form>
+                  <form
+                    action="/skills/edit/<%=skills[i].id%>"
+                    method="post"
+                    class="mx-1"
+                  >
+                    <button class="btn btn-outline-secondary">
+                      <!-- <i class="fa-regular fa-eye-slash"></i> -->
+                      <i class="fa-solid fa-edit"></i>
+                    </button>
+                  </form>
+                  <form
+                    action="/skills/disable/<%=skills[i].id%>"
+                    method="post"
+                  >
+                    <button class="btn btn-outline-warning">
+                      <i class="fa-regular fa-eye-slash"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <% } else{%>
+              <div class="skill border rounded bg-secondary p-2 mb-3">
+                <h3>
+                  <%- skills[i].skillName%>
+                  <span><%-skills[i].percentage%></span>
+                </h3>
+                <div class="the-progress">
+                  <span style="width: <%=skills[i].percentage%>%"></span>
+                </div>
+                <div class="forms d-flex justify-content-end mt-2">
+                  <form
+                    action="/skills/<%=skills[i].id%>  ?_method=DELETE"
+                    method="post"
+                  >
+                    <button class="btn-danger btn mt-1">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </form>
+                  <form
+                    action="/skills/edit/<%=skills[i].id%>"
+                    method="post"
+                    class="mx-1"
+                  >
+                    <button class="btn btn-secondary">
+                      <i class="fa-solid fa-edit"></i>
+                    </button>
+                  </form>
+                  <form
+                    action="/skills/disable/<%=skills[i].id%>"
+                    method="post"
+                  >
+                    <button class="btn btn-warning">
+                      <i class="fa-regular fa-eye-slash"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <% } %> <% } %>
+            </div>
+          </div>
         </div>
-        <div class="col-9 p-3 bg-light">
-            <div class="tabs-content">
-                <div class="personal-info edit ">
-                    <h2 class="mb-5 text-center">Personal Info</h2>
-                    <div class="mb-3">
-                        <span >First Name</span>
-                        <span >Hamad </span>
-                    </div>
-                    <div class="mb-3">
-                        <span>Last Name</span>
-                        <span>Bakeel</span>
-                    </div>
-                    <div class="mb-3">
-                        <span>Home Address</span>
-                        <span>Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US</span>
-                    </div>
-                    <div class="mb-3">
-                        <span>Phone Number</span>
-                        <span>+12123344589</span>
-                    </div>
-                    <div class="mb-3">
-                        <span>Job Title</span>
-                        <span>Full Stack Developer</span>
-                    </div>
-                    <button class="btn edit-button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"><img src="imgs/edit.png" alt=""></button>
-                  
-                </div>
-                
-                <div class="courses edit d-none ">
-                    <h2 class="mb-5 text-center">Courses</h2>
-                    <button class="btn edit-button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <i style="font-size: 35px"  class="far fa-plus-square text-primary"></i></button>
-                    <div class="card mb-3 m-auto justify-content-" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4 d-flex justify-content-center p-1">
-                            <img src="assets/images/svg/HTML5_logo_and_wordmark.svg"  style="max-height: 180px" class="img-fluid rounded-start" alt="...">
-                          </div>
-                          <div class="col-md-8" style="min-width: fit-content;">
-                            <div class="card-body position-relative">
-                              <h5 class="card-title mb-3 fw-bolder">HTML5</h5>
-                              <p class="card-text"><strong>Studied In : </strong>Rwad Academy</p>
-                              <p class="card-text"><strong>Date : </strong>2021</p> 
-                              <p class="card-text"><strong>instructor : </strong>Eng. Mokhtar Ghalib</p>  
-                              <p class="card-text"><strong>Mark : </strong>100%</p>  
-                              <div class="btns position-absolute">
-                                <button class="btn text-danger"><i class="fas fa-trash-alt"></i></button>
-                                <button class="btn text-success"><i class="far fa-edit"></i></button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    <div class="card m-auto mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4 d-flex justify-content-center p-1">
-                            <img src="assets/images/svg/CSS3_logo_and_wordmark.svg" style="max-height: 180px" class="img-fluid rounded-start" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3 fw-bolder">CSS3</h5>
-                                <p class="card-text"><strong>Studied In : </strong>Rwad Academy</p>
-                                <p class="card-text"><strong>Date : </strong>2021</p> 
-                                <p class="card-text"><strong>instructor : </strong>Eng. Mokhtar Ghalib</p>  
-                                <p class="card-text"><strong>Mark : </strong>100%</p> 
-                                <div class="btns position-absolute">
-                                    <button class="btn text-danger"><i class="fas fa-trash-alt"></i></button>
-                                    <button class="btn text-success"><i class="far fa-edit"></i></button>
-                                  </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card m-auto mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4 d-flex justify-content-center p-1">
-                            <img src="assets/images/svg/Unofficial_JavaScript_logo_2.svg" style="max-height: 180px" class="img-fluid rounded-start" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3 fw-bolder">JavaScript</h5>
-                                <p class="card-text"><strong>Studied In : </strong>Rwad Academy</p>
-                                <p class="card-text"><strong>Date : </strong>2021</p> 
-                                <p class="card-text"><strong>instructor : </strong>Eng. Mokhtar Ghalib</p>  
-                                <p class="card-text"><strong>Mark : </strong>100%</p> 
-                                <div class="btns position-absolute">
-                                    <button class="btn text-danger"><i class="fas fa-trash-alt"></i></button>
-                                    <button class="btn text-success"><i class="far fa-edit"></i></button>
-                                  </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card m-auto mb-3 " style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4 d-flex justify-content-center p-1">
-                            <img src="assets/images/svg/React-icon.svg" style="max-height: 180px" class="img-fluid rounded-start "  alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title mb-3 fw-bolder">React</h5>
-                                <p class="card-text"><strong>Studied In : </strong>Rwad Academy</p>
-                                <p class="card-text"><strong>Date : </strong>2021</p> 
-                                <p class="card-text"><strong>instructor : </strong>Eng. Mokhtar Ghalib</p>  
-                                <p class="card-text"><strong>Mark : </strong>100%</p> 
-                                <div class="btns position-absolute">
-                                    <button class="btn text-danger"><i class="fas fa-trash-alt"></i></button>
-                                    <button class="btn text-success"><i class="far fa-edit"></i></button>
-                                  </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-
-                <div class="experince d-none edit ">
-                    <h2 class="mb-5 text-center">Experience</h2>
-                    <button class="btn edit-button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <i style="font-size: 35px"  class="far fa-plus-square text-primary"></i>
-                    </button>
-                    <div class="card bg-dark mb-3 text-white m-auto" style="max-width: 500px !important;">
-                        <img src="assets/images/experince1.jpg" width="400"class="card-img" alt="...">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">More Than 6 Years of Experience In The Tech Industry</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                        <div class="btns position-absolute">
-                            <button class="btn text-danger"><i class="fas fa-trash-alt"></i></button>
-                            <button class="btn text-success"><i class="far fa-edit"></i></button>
-                          </div>
-                    </div>
-                    <div class="card bg-dark mb-3 text-white m-auto" style="max-width: 500px !important;">
-                        <img src="assets/images/experince2.jpg" width="400"class="card-img" alt="...">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">More Than 6 Years of Experience In The Tech Industry</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                        <div class="btns position-absolute">
-                            <button class="btn text-danger"><i class="fas fa-trash-alt"></i></button>
-                            <button class="btn text-success"><i class="far fa-edit"></i></button>
-                          </div>
-                    </div>
-                    <div class="card bg-dark mb-3 text-dark m-auto" style="max-width: 500px !important;">
-                        <img src="assets/images/experince3.jpg" width="400"class="card-img" alt="...">
-                        <div class="card-img-overlay position-absolute mt-3 bottom-0">
-                            <h5 class="card-title">Worked With Many Teams</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                        <div class="btns position-absolute">
-                            <button class="btn text-danger"><i class="fas fa-trash-alt"></i></button>
-                            <button class="btn text-success"><i class="far fa-edit"></i></button>
-                          </div>
-                    </div>
-                </div>
-
-
-                <div class="qualifications  d-none edit ">
-                    <h2 class="mb-5 text-center">Qualifications</h2>
-                    <h3 class="mb-5 text-center">Comming Soon ...</h3>
-                </div>
-                
-                <!------------------ Skills Section ------------------>
-                <div class="skills edit d-none">
-                    <h2 class="mb-5 text-center">Skills</h2>
-                    <button class="btn edit-button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <i style="font-size: 35px"  class="far fa-plus-square text-primary"></i>
-                    </button>
-                    <div class="skills mb-3">
-                        <% for( let i = 0; i < skills.length; i++ ) { %>
-                            <div class="skill border rounded  p-2  mb-3">
-                                <h3><%- skills[i].skillName%>  <span><%-skills[i].percentage%></span></h3>
-                                <div class="the-progress">
-                                    <span style="width: <%=skills[i].percentage%>% "></span>
-                                </div>
-                                <div class="forms d-flex justify-content-end">
-                                    <form action="/<%=skills[i].skillName%>  ?_method=DELETE" class=" " method="post">
-                                        <button class="btn-danger btn py-0 px-2 mt-1">
-                                            <i class="far fa-trash fs-6 text-light"></i>
-                                        </button>
-                                    </form>
-                                    <button class="btn-secondary btn py-0 px-2 mt-1 ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        <i class="far fa-edit fs-6 text-light"></i>
-                                    </button>
-                                    <form action="" method="">
-                                    </form>
-                                </div>
-                            </div>
-                        <% } %>
-                    </div>                
-                </div>
-                </div>
-            </div>
+      </div>
     </section>
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Edit Personal Information</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/" method="post">
-                            <div class="form-group flex-nowrap mb-3">
-                                <span class="input-group-text" id="addon-wrapping">Skill Name</span>
-                                <input required type="text" name="skillName" id="skillName"  class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
-                            </div>
-                            <div class="form-group flex-nowrap mb-3">
-                                <label for="percentage" class="form-label me-4">Percentage</label>
-                                <input required type="range" name="percentage"  class="form-range" id="percentage">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Add</button>
-                            </div>
-                            </div>
-                        </form>
-            </div>
-            </div>
-        </div>
-        <!-- <div class="modal editModal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Edit Personal Information</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/" method="post">
-                            <div class="form-group flex-nowrap mb-3">
-                                <span class="input-group-text" id="addon-wrapping">Skill Name</span>
-                                <input required type="text" name="skillName" id="skillName"  class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
-                            </div>
-                            <div class="form-group flex-nowrap mb-3">
-                                <label for="percentage" class="form-label me-4">Percentage</label>
-                                <input required type="range" name="percentage"  class="form-range" id="percentage">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Add</button>
-                            </div>
-                            </div>
-                        </form>
-            </div>
-            </div>
-        </div> -->
-        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Edit Personal Information</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="input-group flex-nowrap mb-3">
-                            <span class="input-group-text" id="addon-wrapping">First Name</span>
-                            <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap mb-3">
-                            <span class="input-group-text" id="addon-wrapping">Last Name</span>
-                            <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap mb-3">
-                            <span class="input-group-text" id="addon-wrapping">Home Address</span>
-                            <input type="text" class="form-control"  aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>                
-                        <div class="input-group flex-nowrap mb-3">
-                            <span class="input-group-text" id="addon-wrapping">Phone</span>
-                            <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap mb-3">
-                            <span class="input-group-text" id="addon-wrapping">Job Title</span>
-                            <input type="text" class="form-control"  aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Understood</button>
-                        </div>
-                </div>
-            </div>
-        </div> -->
+    <!-- Modal -->
 
-        <script src="bootstrap.bundle.js"></script>
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">
+              Edit Personal Information
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="/updatePersonalInfo">
+              <div class="input-group flex-nowrap mb-3">
+                <span class="input-group-text" id="addon-wrapping"
+                  >First Name</span
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Username"
+                  value="<%-personalInfo[0].firstName%>"
+                  aria-describedby="addon-wrapping"
+                />
+              </div>
+              <div class="input-group flex-nowrap mb-3">
+                <span class="input-group-text" id="addon-wrapping"
+                  >Last Name</span
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Username"
+                  value="<%-personalInfo[0].lastName%>"
+                  aria-describedby="addon-wrapping"
+                />
+              </div>
+              <div class="input-group flex-nowrap mb-3">
+                <span class="input-group-text" id="addon-wrapping"
+                  >Home Address</span
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Username"
+                  value="<%-personalInfo[0].Address.country%>"
+                  aria-describedby="addon-wrapping"
+                />
+              </div>
+              <div class="input-group flex-nowrap mb-3">
+                <span class="input-group-text" id="addon-wrapping">Phone</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Username"
+                  value="<%-personalInfo[0].phoneNumbers.work%>"
+                  aria-describedby="addon-wrapping"
+                />
+              </div>
+              <div class="input-group flex-nowrap mb-3">
+                <span class="input-group-text" id="addon-wrapping"
+                  >Job Title</span
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Username"
+                  value="<%-personalInfo[0].jobTitle%>"
+                  aria-describedby="addon-wrapping"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              cancel
+            </button>
+            <button type="button" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bootstrap.bundle.js"></script>
     <script src="jQuery.min.js"></script>
-    <script >
-        $('#personal').click(function(){
-            $('.personal-info').removeClass("d-none");
-            $('.skills, .experince , .qualifications , .courses').addClass("d-none");
-            $('.modal-content').html(`
+    <script>
+      function insertService() {
+        location.href = "/insertService";
+      }
+      $("#personal").click(function () {
+        $(".personal-info").removeClass("d-none");
+        $(".skills, .experince , .qualifications , .courses").addClass(
+          "d-none"
+        );
+        $(".modal-content").html(`
             <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Edit Personal Information</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -527,13 +831,15 @@
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary">Understood</button>
                         </div>
-            `)
-        });
-        $('#courses').click(function(){
-            $('.courses').removeClass("d-none");
-            // $('.courses').slideUp()
-            $('.skills, .experince , .qualifications , .personal-info').addClass("d-none");
-            $('.modal-content').html(`
+            `);
+      });
+      $("#courses").click(function () {
+        $(".courses").removeClass("d-none");
+        // $('.courses').slideUp()
+        $(".skills, .experince , .qualifications , .personal-info").addClass(
+          "d-none"
+        );
+        $(".modal-content").html(`
             <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Add A Course</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -565,11 +871,13 @@
                             <button type="button" class="btn btn-primary">Add</button>
                         </div>
             `);
-        });
-        $('#experince').click(function(){
-            $('.experince').removeClass("d-none");
-            $('.skills, .courses , .qualifications , .personal-info').addClass("d-none");
-            $('.modal-content').html(`
+      });
+      $("#experince").click(function () {
+        $(".experince").removeClass("d-none");
+        $(".skills, .courses , .qualifications , .personal-info").addClass(
+          "d-none"
+        );
+        $(".modal-content").html(`
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Add An Experience</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -592,16 +900,42 @@
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary">Add</button>
                     </div>
-            `)
-        });
-        $('#qualifications').click(function(){
-            $('.qualifications').removeClass("d-none");
-            $('.skills, .experince , .courses , .personal-info').addClass("d-none");
-        });
-        $('#skills').click(function(){
-            $('.skills').removeClass("d-none");
-            $('.courses, .experince , .qualifications , .personal-info').addClass("d-none");
-        });
+            `);
+      });
+      $("#qualifications").click(function () {
+        $(".qualifications").removeClass("d-none");
+        $(".skills, .experince , .courses , .personal-info").addClass("d-none");
+        $(".modal-content").html(`  <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Edit Personal Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/skills" method="post">
+                        <div class="form-group flex-nowrap mb-3">
+                            <span class="input-group-text" id="addon-wrapping">Skill Name</span>
+                            <input required type="text" name="skillName" id="skillName" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                        <div class="form-group flex-nowrap mb-3">
+                            <label for="percentage" class="form-label me-4">Percentage</label>
+                            <input required type="range" name="percentage" class="form-range" id="percentage">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>`);
+      });
+      $("#skills").click(function () {
+        $(".skills").removeClass("d-none");
+        $(".courses, .experince , .qualifications , .personal-info").addClass(
+          "d-none"
+        );
+      });
     </script>
-</body>
+  </body>
 </html>

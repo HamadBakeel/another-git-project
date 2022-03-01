@@ -10,6 +10,10 @@ const skillSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    isDeleted:{
+        type: Boolean,
+        default: true
+    },
     dateCreated:{
         type: Date,
         default: new Date()

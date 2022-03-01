@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Service</title>
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+  </head>
+  <body>
+    <div class="container" style="margin-top: 10%; width: 60%">
+      <h1 class="text-center">Add A Service</h1>
+      <form action="/services/insertService" method="post">
+        <div class="form-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Service Name</span>
+          <input
+            type="text"
+            class="form-control"
+            name="serviceName"
+            required
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <span class="input-group-text" id="basic-addon1"
+            >Service Description</span
+          >
+          <input
+            type="text"
+            name="serviceDescription"
+            class="form-control"
+            required
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Served Clients</span>
+          <input
+            type="number"
+            name="servedClients"
+            required
+            class="form-control"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <button type="submit" class="btn btn-outline-primary px-4">Add</button>
+      </form>
+    </div>
+  </body>
+</html>
