@@ -43,6 +43,10 @@ const personalInfoSchema = new mongoose.Schema({
     jobTitle: {
         type: String,
         default: 'Demo Job Title'
+    },
+    profileImage:{
+        type: String,
+        default: "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"
     }
 
 });

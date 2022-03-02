@@ -3,8 +3,12 @@
         style="    width: 180px; height: 80vh;">
     <div class="profile-content ">
         <div class="img-container">
-            <img src="imgs/profileIimage.png"  alt="" width="150"class="pb-4 rounded-circle  profile-img">
-            <button class="btn edit-button "><img src="imgs/edit.png" alt=""></button>
+            <!-- <img src="imgs/profileIimage.png"  alt="" width="150"class="pb-4 rounded-circle  profile-img"> -->
+            <img src="<%=personalInfo[0].profileImage%> "  alt="" width="150"class="pb-4 rounded-circle  profile-img">
+            <!-- <button class="btn edit-button "><img src="imgs/edit.png" alt=""></button> -->
+            <input type="file" class="custom-file-input edit-button" style="color: transparent;    width: 40px; height: 40px; cursor: pointer;" >
+            <!-- <input type="file" class="custom-file-input" style="color: transparent; margin-inline-start: 150px;" > -->
+            
         </div>
        <div class="name-container">
         <h5 class="name fw-bolde text-center">Hamad Bakeel

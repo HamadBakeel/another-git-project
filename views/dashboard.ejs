@@ -189,15 +189,35 @@
       }
 
       .skills .the-progress span {
-        background-color: #777;
-        height: 100%;
-        position: absolute;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-      }
+            background-color: #777;
+            height: 100%;
+            position: absolute;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
+        .custom-file-input::-webkit-file-upload-button {
+        visibility: hidden;
+        }
+        .custom-file-input::before {
+        font: var(--fa-font-solid);
+        content: '\f4ff';
+        display: inline-block;
+        color: black;
+        width: 50px;
+        padding: 5px 8px;
+        outline: none;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        text-shadow: 1px 1px #fff;
+        font-weight: 900;
+        font-size: 20px;
+        }
+        .custom-file-input:active::before {
+            background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+        }
     </style>
   </head>
 
