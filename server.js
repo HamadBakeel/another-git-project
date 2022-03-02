@@ -32,17 +32,18 @@ const servicesIcons = [
     "fas fa-palette fa-4x",
     "fas fa-bullhorn fa-4x",
 ];
-const services = [
-    "Security",
-    "Fixing issues",
-    "Location",
-    "Proffisional Coding",
-    "Designing",
-    "Marketing",
-];
+// const services = [
+//     "Security",
+//     "Fixing issues",
+//     "Location",
+//     "Proffisional Coding",
+//     "Designing",
+//     "Marketing",
+// ];
 
 server.get("/", async(_, res) => {
     const skills = await Skill.find();
+    const services = await Service.find();
     // const personalInfo = await PersonalInfo.find();
     res.render("index", { servicesIcons, services, skills });
 });
@@ -68,13 +69,13 @@ server.post('/updatePersonalInfo', async(req, res) => {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             Address: {
-                country: req.body.country,
-                city: req.body.city,
+                city: req.body.city.toString(),
+                country: req.body.country.toString(),
                 street: req.body.street
             },
             phoneNumbers: {
-                work: req.body.work,
-                home: req.body.home
+                work: parseInt(req.body.work),
+                home: parseInt(req.body.home),
             },
             jobTitle: req.body.jobTitle
         },

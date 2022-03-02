@@ -12,8 +12,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+      referrerpolicy="no-referrer"/>
     <style>
       body {
         background-color: #f8f9fa;
@@ -246,28 +245,13 @@
 
           <div class="courses edit d-none">
             <h2 class="mb-5 text-center">Courses</h2>
-            <button
-              class="btn edit-button"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              <i
-                style="font-size: 35px"
-                class="far fa-plus-square text-primary"
-              ></i>
+            <button class="btn edit-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <i style="font-size: 35px" class="far fa-plus-square text-primary"></i>
             </button>
-            <div
-              class="card mb-3 m-auto justify-content-"
-              style="max-width: 540px"
-            >
+            <div class="card mb-3 m-auto justify-content-" style="max-width: 540px">
               <div class="row g-0">
                 <div class="col-md-4 d-flex justify-content-center p-1">
-                  <img
-                    src="assets/images/svg/HTML5_logo_and_wordmark.svg"
-                    style="max-height: 180px"
-                    class="img-fluid rounded-start"
-                    alt="..."
-                  />
+                  <img src="assets/images/svg/HTML5_logo_and_wordmark.svg" style="max-height: 180px"class="img-fluid rounded-start"alt="..."/>
                 </div>
                 <div class="col-md-8" style="min-width: fit-content">
                   <div class="card-body position-relative">
@@ -292,15 +276,10 @@
                 </div>
               </div>
             </div>
-            <div class="card m-auto mb-3" style="max-width: 540px">
+            <!-- <div class="card m-auto mb-3" style="max-width: 540px">
               <div class="row g-0">
                 <div class="col-md-4 d-flex justify-content-center p-1">
-                  <img
-                    src="assets/images/svg/CSS3_logo_and_wordmark.svg"
-                    style="max-height: 180px"
-                    class="img-fluid rounded-start"
-                    alt="..."
-                  />
+                  <img src="assets/images/svg/CSS3_logo_and_wordmark.svg" style="max-height: 180px" class="img-fluid rounded-start"alt="..."/>
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -328,12 +307,7 @@
             <div class="card m-auto mb-3" style="max-width: 540px">
               <div class="row g-0">
                 <div class="col-md-4 d-flex justify-content-center p-1">
-                  <img
-                    src="assets/images/svg/Unofficial_JavaScript_logo_2.svg"
-                    style="max-height: 180px"
-                    class="img-fluid rounded-start"
-                    alt="..."
-                  />
+                  <img src="assets/images/svg/Unofficial_JavaScript_logo_2.svg" style="max-height: 180px" class="img-fluid rounded-start"alt="..."/>
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -361,12 +335,7 @@
             <div class="card m-auto mb-3" style="max-width: 540px">
               <div class="row g-0">
                 <div class="col-md-4 d-flex justify-content-center p-1">
-                  <img
-                    src="assets/images/svg/React-icon.svg"
-                    style="max-height: 180px"
-                    class="img-fluid rounded-start"
-                    alt="..."
-                  />
+                  <img src="assets/images/svg/React-icon.svg" style="max-height: 180px" class="img-fluid rounded-start" alt="..."/>
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -390,7 +359,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="experince d-none edit">
@@ -496,50 +465,33 @@
             <h2 class="mb-5 text-center">Services</h2>
             <form action="/services/insertService">
               <button class="btn edit-button">
-                <i
-                  style="font-size: 35px"
-                  class="far fa-plus-square text-primary"
-                ></i>
+                <i style="font-size: 35px" class="far fa-plus-square text-primary"></i>
               </button>
             </form>
-            <% for( let i = 0; i < services.length; i++ ) { %> <% if
-            (services[i].isDeleted) { %>
+            <% for( let i = 0; i < services.length; i++ ) { %> <% if(services[i].isDeleted) { %>
             <div class="border py-3 px-1 mb-2 bg-secondary rounded">
-              <div
-                class="content"
-                style="
-                  display: flex;
-                  align-items: center;
-                  flex-direction: column;
-                "
-              >
+              <div class="content"style="display: flex; align-items: center; flex-direction: column;">
                 <h2><%- services[i].serviceName %></h2>
-                <p style="font-size: 50px; font-weight: bold">
-                  <%- services[i].servedClients %>
-                </p>
+                <div class="d-flex justify-content-center flex-column align-items-center">
+                    <p style="font-size: 50px; font-weight: bold; margin-bottom: 0">
+                        <%- services[i].servedClients %>
+                    </p>
+                    <p style="margin-top: 0; margin-bottom: 15px;">Satisfied Clients</p>
+                </div>
                 <p><%- services[i].serviceDescription %></p>
               </div>
-              <div class="forms d-flex justify-content-end mt-2">
-                <form
-                  action="/services/<%=services[i].id %>  ?_method=DELETE"
-                  method="post"
-                >
+                <div class="forms d-flex justify-content-end mt-2">
+                <form action="/services/<%=services[i].id %>  ?_method=DELETE" method="post">
                   <button class="btn-danger btn mt-1">
                     <i class="fa-solid fa-trash"></i>
                   </button>
                 </form>
-                <form
-                  action="/services/edit/<%= services[i].id%> "
-                  method="post"
-                >
+                <form action="/services/edit/<%= services[i].id%> " method="post">
                   <button class="btn-secondary btn py-0 px-2 mt-1 mx-2">
                     <i class="fa-solid fa-edit"></i>
                   </button>
                 </form>
-                <form
-                  action="/services/disable/<%=services[i].id%> "
-                  method="post"
-                >
+                <form action="/services/disable/<%=services[i].id%> " method="post">
                   <button class="btn btn-warning">
                     <i class="fa-regular fa-eye-slash"></i>
                   </button>
@@ -548,14 +500,7 @@
             </div>
             <% }else{ %>
             <div class="border py-3 px-1 mb-2 rounded">
-              <div
-                class="content"
-                style="
-                  display: flex;
-                  align-items: center;
-                  flex-direction: column;
-                "
-              >
+              <div class="content" style=" display: flex; align-items: center; flex-direction: column;">
                 <h2><%- services[i].serviceName %></h2>
                 <p style="font-size: 50px; font-weight: bold">
                   <%- services[i].servedClients %>
@@ -563,51 +508,35 @@
                 <p><%- services[i].serviceDescription %></p>
               </div>
               <div class="forms d-flex justify-content-end mt-2">
-                <form
-                  action="/services/<%=services[i].id %>  ?_method=DELETE"
-                  method="post"
-                >
+                <form action="/services/<%=services[i].id %>  ?_method=DELETE" method="post">
                   <button class="btn-outline-danger btn mt-1">
                     <i class="fa-solid fa-trash"></i>
                   </button>
                 </form>
-                <form
-                  action="/services/edit/<%= services[i].id%> "
-                  method="post"
-                >
+                <form action="/services/edit/<%= services[i].id%> " method="post">
                   <button class="btn-outline-secondary btn py-0 px-2 mt-1 mx-2">
                     <i class="fa-solid fa-edit"></i>
                   </button>
                 </form>
-                <form
-                  action="/services/disable/<%=services[i].id%> "
-                  method="post"
-                >
+                <form action="/services/disable/<%=services[i].id%> " method="post">
                   <button class="btn btn-outline-warning">
                     <i class="fa-regular fa-eye-slash"></i>
                   </button>
                 </form>
               </div>
             </div>
-            <% } %> <% } %>
+            <% } %> 
+        <% } %>
           </div>
 
           <!------------------ Skills Section ------------------>
           <div class="skills edit d-none">
             <h2 class="mb-5 text-center">Skills</h2>
-            <button
-              class="btn edit-button"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              <i
-                style="font-size: 35px"
-                class="far fa-plus-square text-primary"
-              ></i>
+            <button class="btn edit-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <i style="font-size: 35px" class="far fa-plus-square text-primary"></i>
             </button>
             <div class="skills mb-3">
-              <% for( let i = 0; i < skills.length; i++ ) { %> <% if
-              (skills[i].isDeleted === true) { %>
+              <% for( let i = 0; i < skills.length; i++ ) { %> <% if(skills[i].isDeleted === true) { %>
               <div class="skill border rounded p-2 mb-3">
                 <h3>
                   <%- skills[i].skillName%>
@@ -617,28 +546,18 @@
                   <span style="width: <%=skills[i].percentage%>%"></span>
                 </div>
                 <div class="forms d-flex justify-content-end mt-2">
-                  <form
-                    action="/skills/<%=skills[i].id%>  ?_method=DELETE"
-                    method="post"
-                  >
+                  <form action="/skills/<%=skills[i].id%>  ?_method=DELETE" method="post">
                     <button class="btn-outline-danger btn mt-1">
                       <i class="fa-solid fa-trash"></i>
                     </button>
                   </form>
-                  <form
-                    action="/skills/edit/<%=skills[i].id%>"
-                    method="post"
-                    class="mx-1"
-                  >
+                  <form action="/skills/edit/<%=skills[i].id%>" method="post" class="mx-1">
                     <button class="btn btn-outline-secondary">
                       <!-- <i class="fa-regular fa-eye-slash"></i> -->
                       <i class="fa-solid fa-edit"></i>
                     </button>
                   </form>
-                  <form
-                    action="/skills/disable/<%=skills[i].id%>"
-                    method="post"
-                  >
+                  <form action="/skills/disable/<%=skills[i].id%>" method="post">
                     <button class="btn btn-outline-warning">
                       <i class="fa-regular fa-eye-slash"></i>
                     </button>
@@ -655,34 +574,25 @@
                   <span style="width: <%=skills[i].percentage%>%"></span>
                 </div>
                 <div class="forms d-flex justify-content-end mt-2">
-                  <form
-                    action="/skills/<%=skills[i].id%>  ?_method=DELETE"
-                    method="post"
-                  >
+                  <form action="/skills/<%=skills[i].id%>  ?_method=DELETE" method="post">
                     <button class="btn-danger btn mt-1">
                       <i class="fa-solid fa-trash"></i>
                     </button>
                   </form>
-                  <form
-                    action="/skills/edit/<%=skills[i].id%>"
-                    method="post"
-                    class="mx-1"
-                  >
+                  <form action="/skills/edit/<%=skills[i].id%>"method="post" class="mx-1">
                     <button class="btn btn-secondary">
                       <i class="fa-solid fa-edit"></i>
                     </button>
                   </form>
-                  <form
-                    action="/skills/disable/<%=skills[i].id%>"
-                    method="post"
-                  >
+                  <form action="/skills/disable/<%=skills[i].id%>" method="post">
                     <button class="btn btn-warning">
                       <i class="fa-regular fa-eye-slash"></i>
                     </button>
                   </form>
                 </div>
               </div>
-              <% } %> <% } %>
+                <% } %>
+            <% } %>
             </div>
           </div>
         </div>
@@ -690,97 +600,47 @@
     </section>
     <!-- Modal -->
 
-    <div
-      class="modal fade"
-      id="staticBackdrop"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="staticBackdropLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="staticBackdropLabel">
               Edit Personal Information
             </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
           </div>
           <div class="modal-body">
-            <form action="/updatePersonalInfo">
+            <form action="/updatePersonalInfo" method="post">
               <div class="input-group flex-nowrap mb-3">
-                <span class="input-group-text" id="addon-wrapping"
-                  >First Name</span
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="Username"
-                  value="<%-personalInfo[0].firstName%>"
-                  aria-describedby="addon-wrapping"
-                />
+                <span class="input-group-text" id="addon-wrapping" >First Name</span>
+                <input type="text" class="form-control" name="firstName" value="<%-personalInfo[0].firstName%>"aria-describedby="addon-wrapping"/>
               </div>
               <div class="input-group flex-nowrap mb-3">
-                <span class="input-group-text" id="addon-wrapping"
-                  >Last Name</span
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="Username"
-                  value="<%-personalInfo[0].lastName%>"
-                  aria-describedby="addon-wrapping"
-                />
+                <span class="input-group-text" id="addon-wrapping">Last Name</span>
+                <input type="text" class="form-control" name="lastName" value="<%-personalInfo[0].lastName%>" aria-describedby="addon-wrapping"/>
               </div>
               <div class="input-group flex-nowrap mb-3">
-                <span class="input-group-text" id="addon-wrapping"
-                  >Home Address</span
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="Username"
-                  value="<%-personalInfo[0].Address.country%>"
-                  aria-describedby="addon-wrapping"
-                />
+                <span class="input-group-text" id="addon-wrapping" >Home Address</span>
+                <input type="text" class="form-control" name="country" value="<%-personalInfo[0].Address.country%>"aria-describedby="addon-wrapping"/>
               </div>
               <div class="input-group flex-nowrap mb-3">
                 <span class="input-group-text" id="addon-wrapping">Phone</span>
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="Username"
-                  value="<%-personalInfo[0].phoneNumbers.work%>"
-                  aria-describedby="addon-wrapping"
-                />
+                <input type="text" class="form-control" name="work" value="<%-personalInfo[0].phoneNumbers.work%>"aria-describedby="addon-wrapping"/>
               </div>
               <div class="input-group flex-nowrap mb-3">
-                <span class="input-group-text" id="addon-wrapping"
-                  >Job Title</span
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="Username"
-                  value="<%-personalInfo[0].jobTitle%>"
-                  aria-describedby="addon-wrapping"
-                />
+                <span class="input-group-text" id="addon-wrapping" >Job Title</span>
+                <input type="text" class="form-control" name="jobTitle" value="<%-personalInfo[0].jobTitle%>" aria-describedby="addon-wrapping"/>
               </div>
+              <input type="text" name="id" value="<%-personalInfo[0].id%> " class="d-none">
+              <input type="text" name="home" value="123" class="d-none">
+              <!-- <input type="text" name="country" value="country" class="d-none"> -->
+              <input type="text" name="street" value="street" class="d-none">
+              <input type="text" name="city" value="city" class="d-none">
               <button type="submit" class="btn btn-primary">Update</button>
             </form>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
               cancel
             </button>
             <button type="button" class="btn btn-primary">Update</button>

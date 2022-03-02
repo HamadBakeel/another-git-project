@@ -33,7 +33,12 @@ const personalInfoSchema = new mongoose.Schema({
             type: Number,
             default: 123456789
         },
-        home: Number,
+        
+        home: {
+            type: Number,
+            default: 123456789
+        },
+        
     },
     jobTitle: {
         type: String,

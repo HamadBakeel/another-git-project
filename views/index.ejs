@@ -99,11 +99,14 @@
         </div>
         <div class="container">
           <% for(let i=0 ; i<services.length ; i++) { %> 
-            <div class="box">
-            <i class="<%= servicesIcons[i]%> "></i>
-              <h3><%= services[i] %> </h3>
-              <div class="info"><a href="#">Details</a></div>
-            </div>
+            <% if (!services[i].isDeleted) { %>
+             
+              <div class="box">
+                <i class="<%= servicesIcons[i]%> "></i>
+                <h3><%= services[i].serviceName%> </h3>
+                <div class="info"><a href="#">Details</a></div>
+              </div>
+              <% } %>
             <% } %> 
           </div>
 
